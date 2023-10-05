@@ -4,14 +4,15 @@ const forms = function () {
 
 	const form = document.querySelectorAll('form')
 	const input = document.querySelectorAll('input')
-
-	// checkNumInputs(input[name = "user_phone"])
+	const phoneInput = document.querySelectorAll('input[name="user_phone"]')
 
 	const message = {
 		loading: 'Загрузка...',
 		success: "Спасибо! Скоро мы с вами свяжемся",
 		fail: 'Что-то пошло не так...',
 	}
+
+	checkNumInputs(phoneInput)
 
 	form.forEach(item => {
 		item.addEventListener('submit', function (event) {
