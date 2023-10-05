@@ -15,6 +15,7 @@ const tabs = function (headerSelector, tabSelector, contentSelector, activeClass
 		}
 
 		tabs.forEach((item, index) => {
+
 			if (targetTab === item) {
 				hideTabContent()
 				showTabContent(index)
