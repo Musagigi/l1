@@ -12,7 +12,7 @@ const forms = function () {
 		fail: 'Что-то пошло не так...',
 	}
 
-	checkNumInputs(phoneInput)
+	// checkNumInputs(phoneInput)
 
 	form.forEach(item => {
 		item.addEventListener('submit', function (event) {
