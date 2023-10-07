@@ -4,7 +4,7 @@ const forms = function () {
 
 	const form = document.querySelectorAll('form')
 	const input = document.querySelectorAll('input')
-	// const phoneInput = document.querySelectorAll('input[name="user_phone"]')
+	const phoneInput = 'input[name = "user_phone"]'
 
 	const message = {
 		loading: 'Загрузка...',
@@ -12,7 +12,7 @@ const forms = function () {
 		fail: 'Что-то пошло не так...',
 	}
 
-	// checkNumInputs(phoneInput)
+	checkNumInputs(phoneInput)
 
 	form.forEach(item => {
 		item.addEventListener('submit', function (event) {
@@ -24,7 +24,7 @@ const forms = function () {
 
 			const formData = new FormData(item)
 
-			sendData('http://127.0.0.1:5173/upload', formData)
+			sendData('http://127.0.0.1:3000/upload', formData)
 				.then(response => {
 					console.log(response);
 					statusMessage.textContent = message.success

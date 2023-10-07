@@ -1,6 +1,3 @@
-/*Fonts Family*/
-/*Colors*/
-/*Basic settings*/
 html {
 	/* overflow-x: hidden; */
 	font-size: 10px;
@@ -385,6 +382,12 @@ textarea:focus {
 	padding: 8rem 0;
 }
 
+.glazing_slider {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
 .glazing_block {
 	display: inline-block;
 }
@@ -399,10 +402,6 @@ textarea:focus {
 	font-size: 1.8rem;
 	font-weight: 600;
 	text-decoration: underline;
-	/*&:focus {
-				text-decoration: none;
-				color: #454545;
-			}*/
 }
 
 .glazing_block a:hover {
@@ -538,6 +537,12 @@ textarea:focus {
 .decoration {
 	padding: 8rem 0;
 	background-color: #f7f7f7;
+}
+
+.decoration_slider {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .decoration_item {
