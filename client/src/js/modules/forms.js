@@ -40,12 +40,12 @@ const forms = function () {
 	async function sendData(url, data) {
 		document.querySelector('.status').textContent = message.loading
 
-		let result = await fetch(url, {
+		let response = await fetch(url, {
 			method: 'POST',
 			body: data,
 		})
 
-		return await result.text()
+		return await response.text()
 	}
 
 	function createStatusMessage() {
