@@ -2,11 +2,11 @@ import checkNumInputs from "./checkNumInputs";
 
 function forms() {
 
-	const form = document.querySelectorAll('form')
-	const input = document.querySelectorAll('input')
+	const forms = document.querySelectorAll('form')
+	const inputs = document.querySelectorAll('input')
 	const phoneInput = 'input[name = "user_phone"]'
 
-	const message = {
+	const { loading, success, fail } = {
 		loading: 'Загрузка...',
 		success: "Спасибо! Скоро мы с вами свяжемся",
 		fail: 'Что-то пошло не так...',
@@ -14,31 +14,33 @@ function forms() {
 
 	checkNumInputs(phoneInput)
 
-	form.forEach(item => {
-		item.addEventListener('submit', function (event) {
-			event.preventDefault()
-
-			let statusMessage = createStatusMessage()
-			item.append(statusMessage)
-
-			const formData = new FormData(item)
-
-			sendData('http://127.0.0.1:3000/upload', formData)
-				.then(response => {
-					console.log(response);
-					statusMessage.textContent = message.success
-				})
-				.catch(() => statusMessage.textContent = message.fail)
-				.finally(() => {
-					clearInputs()
-					setTimeout(() => { statusMessage.remove() }, 5000)
-				})
-		})
+	forms.forEach(form => {
+		form.addEventListener('submit', handleSubmit)
 	})
 
+	function handleSubmit(event) {
+		event.preventDefault()
+
+		let statusMessage = createStatusMessage()
+		this.append(statusMessage)
+
+		const formData = new FormData(this)
+
+		sendData('http://127.0.0.1:3000/upload', formData)
+			.then(response => {
+				console.log(response);
+				statusMessage.textContent = success
+			})
+			.catch(() => statusMessage.textContent = fail)
+			.finally(() => {
+				clearInputs()
+				setTimeout(() => statusMessage.remove(), 5000)
+			})
+	}
 
 	async function sendData(url, data) {
-		document.querySelector('.status').textContent = message.loading
+		let statusMessage = document.querySelector('.status')
+		statusMessage.textContent = loading
 
 		let response = await fetch(url, {
 			method: 'POST',
@@ -55,7 +57,7 @@ function forms() {
 	}
 
 	function clearInputs() {
-		input.forEach(item => {
+		inputs.forEach(item => {
 			item.value = ''
 		})
 	}
