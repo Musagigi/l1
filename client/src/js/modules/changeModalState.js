@@ -22,12 +22,9 @@ function changeModalState(state) {
 						break
 					case 'INPUT':
 						if (item.getAttribute('type') === 'checkbox') {
-							index === 0 ? state[keyName] = 'Холодное' : state[keyName] = 'Теплое'
+							state[keyName] = index === 0 ? 'Холодное' : 'Теплое'
 							elem.forEach((box, j) => {
-								box.checked = false
-								if (index === j) {
-									box.checked = true
-								}
+								box.checked = index === j
 							})
 						} else {
 							state[keyName] = item.value

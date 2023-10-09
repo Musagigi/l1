@@ -7,20 +7,16 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 	headerSlider.addEventListener('click', (event) => {
 		const targetTab = event.target.closest(tabSelector)
 
-		if (targetTab === null) {
-			return
-		}
-		if (!headerSlider.contains(targetTab)) {
-			return
-		}
+		if (targetTab && headerSlider.contains(targetTab)) {
 
-		tabs.forEach((item, index) => {
+			tabs.forEach((item, index) => {
 
-			if (targetTab === item) {
-				hideTabContent()
-				showTabContent(index)
-			}
-		})
+				if (targetTab === item) {
+					hideTabContent()
+					showTabContent(index)
+				}
+			})
+		}
 	})
 
 	function hideTabContent() {
