@@ -1,6 +1,6 @@
 import checkNumInputs from "./checkNumInputs";
 
-const changeModalState = (state) => {
+function changeModalState(state) {
 	const windowForm = document.querySelectorAll('.balcon_icons_img')
 	const windowWidth = document.querySelectorAll('#width')
 	const windowHeight = document.querySelectorAll('#height')

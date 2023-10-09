@@ -1,4 +1,4 @@
-const checkNumInputs = function (selector) {
+function checkNumInputs(selector) {
 	const numInput = document.querySelectorAll(selector)
 
 	numInput.forEach(item => {

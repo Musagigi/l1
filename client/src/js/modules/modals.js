@@ -1,4 +1,4 @@
-const modals = function () {
+function modals() {
 
 	function bindModal(btnOpenSelector, modalSelector, btnCloseSelector, closeClickOverlay = true) {
 

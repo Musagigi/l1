@@ -1,4 +1,4 @@
-const popupImage = () => {
+function popupImage() {
 
 	let works = document.querySelector('.works')
 	let popup = document.createElement('div')

@@ -1,6 +1,6 @@
 import checkNumInputs from "./checkNumInputs";
 
-const forms = function () {
+function forms() {
 
 	const form = document.querySelectorAll('form')
 	const input = document.querySelectorAll('input')

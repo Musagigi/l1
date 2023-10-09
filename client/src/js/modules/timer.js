@@ -1,4 +1,4 @@
-const timer = (id, deadline) => {
+function timer(id, deadline) {
 
 	const addZero = (num) => {
 		if (num <= 9) {

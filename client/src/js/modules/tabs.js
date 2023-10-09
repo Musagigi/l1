@@ -1,4 +1,4 @@
-const tabs = function (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') {
+function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'block') {
 
 	const headerSlider = document.querySelector(headerSelector)
 	const tabs = document.querySelectorAll(tabSelector)
