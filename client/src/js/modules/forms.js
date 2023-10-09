@@ -18,8 +18,7 @@ const forms = function () {
 		item.addEventListener('submit', function (event) {
 			event.preventDefault()
 
-			let statusMessage = document.createElement('div')
-			statusMessage.classList.add('status')
+			let statusMessage = createStatusMessage()
 			item.append(statusMessage)
 
 			const formData = new FormData(item)
@@ -47,6 +46,12 @@ const forms = function () {
 		})
 
 		return await result.text()
+	}
+
+	function createStatusMessage() {
+		let statusMessage = document.createElement('div')
+		statusMessage.classList.add('status')
+		return statusMessage
 	}
 
 	function clearInputs() {
