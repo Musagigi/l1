@@ -1,6 +1,5 @@
 const express = require('express')
 const multer = require('multer')
-const bodyParser = require('body-parser')
 const fs = require('fs')
 
 const app = express()
@@ -11,8 +10,6 @@ app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
 	next();
 });
-
-app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
 	res.sendFile('/client/index.html');
