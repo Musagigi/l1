@@ -9,7 +9,7 @@ import popupImage from './modules/popupImage.js';
 document.addEventListener('DOMContentLoaded', function () {
 
 	let modalState = {}
-	let deadline = '2023-10-10'
+	let deadline = '2023-12-10'
 
 	changeModalState(modalState)
 	modals()
