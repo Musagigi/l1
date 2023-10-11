@@ -1,4 +1,4 @@
-function modals() {
+function modals(state) {
 
 	function bindModal(btnOpenSelector, modalSelector, btnCloseSelector, closeClickOverlay = true) {
 
@@ -12,11 +12,6 @@ function modals() {
 				if (event.target) {
 					event.preventDefault()
 				}
-
-				closePopupWindows(popupWindows)
-
-				modal.style.display = 'block'
-				document.body.style.overflow = 'hidden'
 			})
 		})
 
