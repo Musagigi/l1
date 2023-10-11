@@ -1,6 +1,6 @@
 import checkNumInputs from "./checkNumInputs";
 
-function forms() {
+function forms(state) {
 
 	const forms = document.querySelectorAll('form')
 	const inputs = document.querySelectorAll('input')
@@ -25,6 +25,13 @@ function forms() {
 		this.append(statusMessage)
 
 		const formData = new FormData(this)
+
+		if (this.dataset.calc === 'price') {
+			for (let [key, value] of Object.entries(state)) {
+				formData.append(key, value)
+			}
+		}
+
 
 		sendData('http://127.0.0.1:3000/upload', formData)
 			.then(response => {
