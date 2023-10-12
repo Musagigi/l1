@@ -8,11 +8,17 @@ import popupImage from './modules/popupImage.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	let modalState = {}
+	let modalState = {
+		form: 0,
+		width: '',
+		height: '',
+		type: '',
+		profile: '',
+	}
 	let deadline = '2023-12-10'
 
 	changeModalState(modalState)
-	modals(modalState)
+	modals()
 	tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active')
 	tabs('.decoration_slider', '.no_click', '.decoration_content > div > div',
 		'after_click');

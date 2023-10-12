@@ -1,15 +1,29 @@
 import checkNumInputs from "./checkNumInputs";
 
 function changeModalState(state) {
+	const nextCalcBtn = document.querySelector('.popup_calc_button')
+	const profileCalcBtn = document.querySelector('.popup_calc_profile_button')
+
 	const windowForm = document.querySelectorAll('.balcon_icons_img')
 	const windowWidth = document.querySelectorAll('#width')
 	const windowHeight = document.querySelectorAll('#height')
 	const windowType = document.querySelectorAll('#view_type')
 	const windowProfile = document.querySelectorAll('.checkbox')
 
-
 	checkNumInputs('#width')
 	checkNumInputs('#height')
+
+	function btnDisabled(btn) {
+		btn.disabled = true
+	}
+
+	btnDisabled(nextCalcBtn)
+	btnDisabled(profileCalcBtn)
+
+	function testNextCalcBtn() {
+		nextCalcBtn.disabled = state.width && state.height ? false : true
+		profileCalcBtn.disabled = state.type && state.profile ? false : true
+	}
 
 	function bindActionToElems(eventHandler, elem, keyName) {
 		elem.forEach((item, index) => {
@@ -34,7 +48,7 @@ function changeModalState(state) {
 						state[keyName] = item.value
 						break
 				}
-
+				testNextCalcBtn()
 				console.log(state);
 			})
 		})
