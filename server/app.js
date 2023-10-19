@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 	res.sendFile('/client/index.html');
 });
 
-app.post('/upload', upload.single(), (req, res) => {
+app.post('/', upload.single(), (req, res) => {
 	const formData = req.body;
 	const data = JSON.stringify(formData)
 	console.log(formData);

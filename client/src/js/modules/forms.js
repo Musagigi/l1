@@ -33,7 +33,7 @@ export function forms(state) {
 		}
 
 
-		sendData('http://127.0.0.1:3000/upload', formData)
+		sendData('http://127.0.0.1:3000', formData)
 			.then(response => {
 				console.log(response);
 				statusMessage.textContent = success
