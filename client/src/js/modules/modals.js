@@ -1,4 +1,4 @@
-function modals() {
+export function modals() {
 
 	function bindModal(btnOpenSelector, modalSelector, btnCloseSelector, closeClickOverlay = true) {
 
@@ -15,6 +15,7 @@ function modals() {
 
 				closePopupWindows(popupWindows)
 				modal.style.display = 'block'
+				modal.classList.add('animated', 'fadeIn')
 				document.body.style.overflow = 'hidden'
 			})
 		})
@@ -57,5 +58,3 @@ function modals() {
 	bindModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false)
 	showModalByTime('.popup_engineer', 60000)
 }
-
-export default modals;

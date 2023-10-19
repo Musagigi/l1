@@ -1,10 +1,10 @@
 // import './slider.js';
-import modals from '/src/js/modules/modals.js';
-import tabs from './modules/tabs.js';
-import forms from './modules/forms.js';
-import changeModalState from './modules/changeModalState.js';
-import timer from './modules/timer.js';
-import popupImage from './modules/popupImage.js';
+import { modals } from '/src/js/modules/modals.js';
+import { tabs } from './modules/tabs.js';
+import { forms } from './modules/forms.js';
+import { changeModalState } from './modules/changeModalState.js';
+import { timer } from './modules/timer.js';
+import { popupImage } from './modules/popupImage.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 

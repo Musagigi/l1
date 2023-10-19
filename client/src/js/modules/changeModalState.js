@@ -1,6 +1,6 @@
-import checkNumInputs from "./checkNumInputs";
+import { checkNumInputs } from "./checkNumInputs";
 
-function changeModalState(state) {
+export function changeModalState(state) {
 	const nextCalcBtn = document.querySelector('.popup_calc_button')
 	const profileCalcBtn = document.querySelector('.popup_calc_profile_button')
 
@@ -60,5 +60,3 @@ function changeModalState(state) {
 	bindActionToElems('change', windowType, 'type')
 	bindActionToElems('change', windowProfile, 'profile')
 }
-
-export default changeModalState

@@ -1,4 +1,4 @@
-function popupImage() {
+export function popupImage() {
 
 	let works = document.querySelector('.works')
 	let popup = document.createElement('div')
@@ -34,5 +34,3 @@ function popupImage() {
 	})
 
 }
-
-export default popupImage

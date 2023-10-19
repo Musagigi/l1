@@ -1,4 +1,4 @@
-function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'block') {
+export function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'block') {
 
 	const headerSlider = document.querySelector(headerSelector)
 	const tabs = document.querySelectorAll(tabSelector)
@@ -37,5 +37,3 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 	hideTabContent()
 	showTabContent()
 }
-
-export default tabs
